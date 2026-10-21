@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kado Care | Making health data simple</title>
+  <title>Kado Care | Your blood report, explained by doctors</title>
+  <meta name="description" content="Send your blood report to Kado on WhatsApp, have a short voice call, and get your Kado Key: a plan signed by a Kado doctor." />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -334,6 +335,33 @@
     @media (max-width: 360px) {
       .cards { flex-direction: column; }
     }
+  
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--brown);
+    }
+    section { display: flex; flex-direction: column; gap: 14px; }
+    .key-letter {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--coral);
+      color: var(--white);
+      font-family: 'Fraunces', serif;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .data-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .faq-q { font-size: 14px; font-weight: 500; color: var(--brown); }
+    .faq-a { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 4px; }
+    .disclaimer { font-size: 11px; line-height: 1.6; color: var(--muted); font-style: italic; margin-top: 10px; }
+    footer a { color: var(--green-deep); }
   </style>
 </head>
 <body>
@@ -348,175 +376,128 @@
 
   <nav>
     <div class="logo">kado<span>.</span>care</div>
-    <div class="badge" id="nav-badge">For Doctors</div>
+    <div class="badge">Signed by doctors</div>
   </nav>
 
-  <!-- Tab bar -->
-  <div class="tab-bar" role="tablist">
-    <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="doctor"  onclick="switchTab('doctor')">For Doctors</button>
-    <button class="tab-btn"        role="tab" aria-selected="false" data-tab="patient" onclick="switchTab('patient')">For Patients</button>
-  </div>
+  <main class="panel active">
 
-  <!-- ═══════════════ DOCTOR PANEL ═══════════════ -->
-  <div class="panel active" id="panel-doctor" role="tabpanel">
+    <h1>Your blood report, <em>explained by doctors.</em></h1>
 
-    <h1>Your records,<br><em>always there.</em></h1>
-
-    <p class="subtitle">Four ways Kado works for you. From clinical records to patient management, AI intelligence and your personal brand.</p>
-
-    <!-- USE CASE 1 -->
-    <div class="usecase">
-      <div class="usecase-header">
-        <div class="usecase-num">1</div>
-        <div class="usecase-title" style="flex:1;">Store your own records</div>
-        <span style="font-size:10px;font-weight:400;letter-spacing:0.4px;color:var(--green);opacity:0.7;">● Live</span>
-      </div>
-      <div class="usecase-body">
-        Forward reports from <strong>specialised cases, procedures and surgeries</strong> on WhatsApp. Build a personal clinical archive you can retrieve anytime.
-      </div>
-      <div class="usecase-steps">
-        <div class="step"><span class="step-dot"></span><span><strong style="color:var(--brown);font-weight:500;">Instant archive.</strong> Forward any report to Kado and it gets tagged and organised automatically.</span></div>
-        <div class="step"><span class="step-dot"></span><span><strong style="color:var(--brown);font-weight:500;">Retrieve on demand.</strong> Pull up any record in seconds, without digging through folders or chats.</span></div>
-      </div>
-    </div>
-
-    <!-- USE CASE 2 -->
-    <div class="usecase">
-      <div class="usecase-header">
-        <div class="usecase-num">2</div>
-        <div class="usecase-title" style="flex:1;">Add your patients</div>
-        <span style="font-size:10px;font-weight:400;letter-spacing:0.4px;color:var(--green);opacity:0.7;">● Live</span>
-      </div>
-      <div class="usecase-body">
-        Add a patient and Kado sends them a WhatsApp. They forward their reports and you get a structured summary across their full history.
-      </div>
-      <div class="usecase-steps">
-        <div class="step"><span class="step-dot"></span><span><strong style="color:var(--brown);font-weight:500;">Instant patient summary.</strong> Key findings, trends and flags across all records, ready before the consultation.</span></div>
-        <div class="step"><span class="step-dot"></span><span><strong style="color:var(--brown);font-weight:500;">Patient timeline link.</strong> Every patient gets a shareable link with their full record history, no app needed.</span></div>
-      </div>
-    </div>
-
-    <!-- USE CASE 3 — Marketing Intelligence -->
-    <div class="usecase">
-      <div class="usecase-header">
-        <div class="usecase-num">3</div>
-        <div class="usecase-title" style="flex:1;">Marketing Intelligence</div>
-        <span style="font-size:10px;font-weight:400;letter-spacing:0.4px;color:var(--green);opacity:0.7;">● Live</span>
-      </div>
-      <div class="usecase-body">
-        Your personal brand, on autopilot. Grow your practice without spending time on it.
-      </div>
-      <div class="usecase-steps">
-        <div class="step">
-          <span class="step-dot"></span>
-          <span><strong style="color:var(--brown);font-weight:500;">Your website, in hours.</strong> Kado builds a custom professional website for you with zero technical setup required.</span>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <span><strong style="color:var(--brown);font-weight:500;">AI content agent.</strong> Record a raw video where our agent interviews you. It edits, creates reels and posts across all your platforms automatically.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- USE CASE 4 — Clinical Intelligence (marquee) -->
-    <div class="usecase" style="border: 2px solid var(--coral); background: linear-gradient(145deg, #fff8f4, #eaf4ef); box-shadow: 0 8px 40px rgba(232,134,106,0.18);">
-      <div class="usecase-header" style="margin-bottom:0;">
-        <div class="usecase-num" style="background:var(--coral);color:white;width:32px;height:32px;font-size:13px;">4</div>
-        <div class="usecase-title" style="flex:1;font-size:19px;letter-spacing:-0.4px;">Clinical Intelligence</div>
-        <span style="font-size:10px;font-weight:500;letter-spacing:0.6px;text-transform:uppercase;color:var(--coral);background:rgba(232,134,106,0.12);padding:4px 10px;border-radius:100px;white-space:nowrap;">Coming soon</span>
-      </div>
-      <div class="usecase-body" style="color:var(--brown);margin-top:12px;">
-        Your AI-powered clinical layer. Built for the way you actually practice.
-      </div>
-      <div class="usecase-steps">
-        <div class="step">
-          <span class="step-dot" style="background:var(--coral);"></span>
-          <span><strong style="color:var(--brown);font-weight:500;">Latest peer-reviewed literature at your fingertips.</strong> Evidence surfaced automatically for each case, without leaving your workflow.</span>
-        </div>
-        <div class="step">
-          <span class="step-dot" style="background:var(--coral);"></span>
-          <span><strong style="color:var(--brown);font-weight:500;">Your AI agent.</strong> Deploy a personalised agent that follows up with patients, tracks compliance, and monitors clinical outcomes on your behalf.</span>
-        </div>
-      </div>
-    </div>
+    <p class="subtitle">Send your blood report to Kado on WhatsApp. Have a short voice call about your health. Get your Kado Key: a clear plan for what to focus on and what to do, checked and signed by a Kado doctor.</p>
 
     <div class="cta-section">
-      <a class="whatsapp-btn" href="https://wa.me/918867062200?text=Hey%2C%20I%20want%20to%20get%20started%20on%20Kado." target="_blank" rel="noopener">
+      <a class="whatsapp-btn" href="https://wa.me/918867062200?text=Hi%20Kado%2C%20I%20want%20my%20Kado%20Key." target="_blank" rel="noopener">
         <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.123.554 4.118 1.528 5.855L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        Get started on WhatsApp
+        Start on WhatsApp
       </a>
-      <p class="cta-note">Free during beta · No setup required</p>
-      <p class="cta-note" style="font-size:13px;font-style:italic;color:var(--coral);margin-top:2px;">Built by doctors and engineers, for the love of medicine</p>
+      <p class="cta-note">English, Hindi or Hinglish. No app to download.</p>
     </div>
 
-  </div>
-
-  <!-- ═══════════════ PATIENT PANEL ═══════════════ -->
-  <div class="panel" id="panel-patient" role="tabpanel">
-
-    <div class="eyebrow">
-      <span class="eyebrow-dot"></span>
-      <span class="eyebrow-text">For you &amp; your family</span>
-    </div>
-
-    <h1>Making your<br>health data <em>simple</em></h1>
-
-    <p class="subtitle">Store, understand and share all your medical records in one safe place, anytime, anywhere.</p>
-
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">🗂️</div>
-        <div class="card-title">Store</div>
-        <div class="card-desc">All your reports &amp; prescriptions in one place</div>
+    <section>
+      <h2>Four simple steps</h2>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="usecase-num">1</div>
+          <div class="usecase-title">Say hi on WhatsApp</div>
+        </div>
+        <div class="usecase-body">Message Kado and agree to how we keep your data safe.</div>
       </div>
-      <div class="card">
-        <div class="card-icon">💡</div>
-        <div class="card-title">Understand</div>
-        <div class="card-desc">Know what your health data actually means</div>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="usecase-num">2</div>
+          <div class="usecase-title">Send your blood report</div>
+        </div>
+        <div class="usecase-body">A PDF or a clear photo from any lab is fine. Kado reads it and sends you a short summary to confirm.</div>
       </div>
-      <div class="card">
-        <div class="card-icon">🔗</div>
-        <div class="card-title">Share</div>
-        <div class="card-desc">Send records to doctors instantly</div>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="usecase-num">3</div>
+          <div class="usecase-title">Talk to Kado</div>
+        </div>
+        <div class="usecase-body">A short voice call, in the language you are comfortable with, about how you feel, your history, your medicines and your goals.</div>
       </div>
-    </div>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="usecase-num">4</div>
+          <div class="usecase-title">Get your Kado Key</div>
+        </div>
+        <div class="usecase-body">A Kado doctor reviews your report and your call, then signs your Key. It arrives on WhatsApp within 24 hours.</div>
+      </div>
+    </section>
 
-    <div class="kado-card-inner">
-      <span class="kado-card-emoji">🃏</span>
-      <p class="kado-card-text">"Kado" means "card" in Japanese. Healthcare journeys are complex, and each Kado is a specific action item to make your health journey easy and intuitive.</p>
-    </div>
+    <section>
+      <h2>One Key. Everything you need to know and do.</h2>
+      <p class="subtitle">Your Kado Key is your personal health plan, written in plain words and signed by a Kado doctor. It has three parts.</p>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="key-letter">K</div>
+          <div class="usecase-title">Knowledge</div>
+        </div>
+        <div class="usecase-body"><strong>Where you stand.</strong> What needs attention in your report, what is already healthy, and a short note from your doctor.</div>
+      </div>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="key-letter">E</div>
+          <div class="usecase-title">Execution</div>
+        </div>
+        <div class="usecase-body"><strong>What to do.</strong> Supplements, doctor visits and medicines, the tests to do next, food, movement, sleep and stress. Each step says which values it should help.</div>
+      </div>
+      <div class="usecase">
+        <div class="usecase-header">
+          <div class="key-letter">Y</div>
+          <div class="usecase-title">Your must-knows</div>
+        </div>
+        <div class="usecase-body"><strong>What to keep in mind.</strong> The warning signs that mean &ldquo;see a doctor in person now&rdquo;, and when Kado will check in with you.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight-text">Kado stays with you after your Key, with regular check-ins on WhatsApp and help when your next report comes in.</div>
+      </div>
+    </section>
 
-    <div class="cta-section">
-      <a class="whatsapp-btn" href="https://wa.me/918867062200?text=Hi%2C%20help%20me%20make%20sense%20of%20my%20health%20data!" target="_blank" rel="noopener">
+    <section>
+      <h2>Every Key is signed by a doctor</h2>
+      <p class="subtitle">Kado is run by doctors. AI helps us read your report and listen to your story, but a registered Kado doctor checks every Key, edits it where needed, and signs it with their name and registration number. Nothing reaches you without that sign-off.</p>
+      <div class="usecase">
+        <div class="usecase-title">Your data, kept safe</div>
+        <ul class="data-list">
+          <li class="step"><span class="step-dot"></span><span>Your data stays in India and is encrypted.</span></li>
+          <li class="step"><span class="step-dot"></span><span>We only use it to make and follow up on your Key.</span></li>
+          <li class="step"><span class="step-dot"></span><span>We never sell your data.</span></li>
+          <li class="step"><span class="step-dot"></span><span>Type DELETE on WhatsApp any time and we erase it.</span></li>
+        </ul>
+        <div class="usecase-body">Read our <a href="/privacy" style="color:var(--green-deep);">Privacy policy</a>.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Common questions</h2>
+      <div class="usecase"><div><div class="faq-q">Which reports can I send?</div><div class="faq-a">Blood reports from any lab in India, as a PDF or a clear photo. If your report is old or unclear, Kado will tell you and ask for a newer one.</div></div></div>
+      <div class="usecase"><div><div class="faq-q">How long does it take?</div><div class="faq-a">The call takes about 15 minutes. Your signed Key reaches you within 24 hours.</div></div></div>
+      <div class="usecase"><div><div class="faq-q">Does Kado replace my doctor?</div><div class="faq-a">No. Kado helps you understand your report and plan your next steps, and your Key is signed by a Kado doctor. For anything urgent, or if you feel unwell, see a doctor in person.</div></div></div>
+      <div class="usecase"><div><div class="faq-q">Which languages?</div><div class="faq-a">English, Hindi and Hinglish.</div></div></div>
+      <div class="usecase"><div><div class="faq-q">Who can use Kado?</div><div class="faq-a">Adults aged 18 and over in India.</div></div></div>
+    </section>
+
+    <section>
+      <h2>Your report has answers. Let&rsquo;s find them together.</h2>
+      <a class="whatsapp-btn" href="https://wa.me/918867062200?text=Hi%20Kado%2C%20I%20want%20my%20Kado%20Key." target="_blank" rel="noopener">
         <svg class="wa-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.123.554 4.118 1.528 5.855L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        Get started on WhatsApp
+        Start on WhatsApp
       </a>
-      <p class="cta-note">Built by doctors, for everyone</p>
-    </div>
+    </section>
 
-  </div>
+  </main>
 
-  <footer>© 2026 Kado Care · kado.care</footer>
+  <footer>
+    &copy; 2026 Kado Care &middot; WhatsApp +91 88670 62200 &middot; <a href="/privacy">Privacy policy</a>
+    <p class="disclaimer">Kado gives health guidance reviewed by registered doctors. It is not an emergency service. In an emergency, call 112 or go to the nearest hospital.</p>
+  </footer>
 
 </div>
-
-<script>
-  function switchTab(tab) {
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.tab === tab);
-      btn.setAttribute('aria-selected', btn.dataset.tab === tab);
-    });
-    document.querySelectorAll('.panel').forEach(panel => {
-      panel.classList.toggle('active', panel.id === 'panel-' + tab);
-    });
-    document.getElementById('nav-badge').textContent =
-      tab === 'doctor' ? 'For Doctors' : 'For Patients';
-  }
-</script>
 
 </body>
 </html>
