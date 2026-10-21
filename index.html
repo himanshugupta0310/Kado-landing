@@ -360,6 +360,15 @@
     .data-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .disclaimer { font-size: 11px; line-height: 1.6; color: var(--muted); font-style: italic; margin-top: 10px; }
     footer a { color: var(--green-deep); }
+    .card-box {
+      border-radius: 24px;
+      padding: 24px 18px;
+      border: 1px solid rgba(59,42,26,0.06);
+    }
+    .card-box.peach { background: #FCEEE2; }
+    .card-box.green { background: var(--green-light); }
+    .card-box .highlight { background: var(--white); }
+    .card-box .data-list .step { font-size: 13px; }
   </style>
 </head>
 <body>
@@ -379,7 +388,7 @@
 
   <main class="panel active">
 
-    <h1>Meet Kado, <em>the AI health advisor guided by a real doctor.</em></h1>
+    <h1>Meet Kado, the AI health advisor guided by a real doctor.</h1>
 
     <p class="subtitle">We know you can&rsquo;t trust an AI with your health. That&rsquo;s why every recommendation is signed off by a real doctor. Kado is the bridge between you and them.</p>
 
@@ -393,7 +402,7 @@
       <p class="cta-note">English, Hindi or Hinglish. No app to download.</p>
     </div>
 
-    <section>
+    <section class="card-box peach">
       <h2>Four simple steps</h2>
       <div class="usecase">
         <div class="usecase-header">
@@ -425,7 +434,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="card-box green">
       <h2>One Key. Everything you need to know and do.</h2>
       <p class="subtitle">Your Kado Key is your personal health plan, written in plain words and signed by a Kado doctor. It has three parts.</p>
       <div class="usecase">
@@ -454,13 +463,13 @@
       </div>
     </section>
 
-    <section>
-      <div class="usecase" style="background:var(--green-tint);border-left:4px solid var(--green-deep);">
+    <section class="card-box peach">
         <h2>Every Key is signed by a doctor</h2>
-        <div class="usecase-body" style="color:var(--green);">Kado is run by doctors. AI helps us read your report and listen to your story, but a registered Kado doctor checks every Key, edits it where needed, and signs it with their name and registration number. Nothing reaches you without that sign-off.</div>
-      </div>
-      <div class="usecase">
-        <div class="usecase-title">Your data, kept safe</div>
+        <div class="subtitle">Kado is run by doctors. AI helps us read your report and listen to your story, but a registered Kado doctor checks every Key, edits it where needed, and signs it with their name and registration number. Nothing reaches you without that sign-off.</div>
+    </section>
+
+    <section class="card-box green">
+        <h2>Your data, kept safe</h2>
         <ul class="data-list">
           <li class="step"><span class="step-dot"></span><span>Your data stays in India and is encrypted.</span></li>
           <li class="step"><span class="step-dot"></span><span>We only use it to make and follow up on your Key.</span></li>
@@ -468,7 +477,6 @@
           <li class="step"><span class="step-dot"></span><span>Type DELETE on WhatsApp any time and we erase it.</span></li>
         </ul>
         <div class="usecase-body">Read our <a href="/privacy" style="color:var(--green-deep);">Privacy policy</a>.</div>
-      </div>
     </section>
 
 
