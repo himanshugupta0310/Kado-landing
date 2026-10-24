@@ -1,5 +1,9 @@
 {
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" }
+  ],
+  "redirects": [
+    { "source": "/doctor", "destination": "https://kado-backend-1035609625680.asia-south1.run.app/doctor", "permanent": false },
+    { "source": "/join", "destination": "https://kado-backend-1035609625680.asia-south1.run.app/doctor/signup", "permanent": false }
   ]
 }
